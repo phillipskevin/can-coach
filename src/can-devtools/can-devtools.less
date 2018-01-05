@@ -26,4 +26,36 @@ can-devtools {
     padding: 10px;
     background-color: #ccc;
   }
+
+  bit-tabs {
+    ul {
+      margin: -10px;
+      padding: 0;
+      border-bottom: 1px solid black;
+
+      li {
+        padding: 10px;
+        list-style: none;
+        display: inline-block;
+        width: 29%;
+        border-right: 1px solid black;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &.active {
+          background-color: #ddd;
+
+          a {
+          }
+        }
+
+        a {
+          color: #000;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }

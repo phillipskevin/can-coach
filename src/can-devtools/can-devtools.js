@@ -4,7 +4,7 @@ import view from "./can-devtools.stache";
 import "./can-devtools.less";
 
 const DevtoolsVM = DefineMap.extend({
-  minimized: { type: "boolean", value: true },
+  minimized: { type: "boolean", value: false },
 
   toggle() {
     this.minimized = !this.minimized;
@@ -13,8 +13,6 @@ const DevtoolsVM = DefineMap.extend({
 
 Component.extend({
   tag: "can-devtools",
-
   ViewModel: DevtoolsVM,
-
   view: view
 });

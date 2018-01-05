@@ -37,6 +37,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "bit-tabs": "^2.0.0-pre.1",
     "can-component": "^4.0.0-pre.25",
     "can-define": "^2.0.0-pre.25",
     "can-queues": "^0.4.0",

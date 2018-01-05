@@ -1,8 +1,21 @@
+<can-import from="bit-tabs/unstyled" />
+
 {{#if minimized}}
   <a href="javascript://" on:click="toggle()" class="open-button">&#x1F96B;</a>
 {{else}}
   <div class="devtools-container">
     <a href="javascript://" on:click="toggle()" class="close-button">X</a>
-    This is the devtools
+
+    <bit-tabs>
+      <bit-panel title:from="'Components'">
+        <p>Components</p>
+      </bit-panel>
+      <bit-panel title:from="'Queues'">
+        <p>Queues</p>
+      </bit-panel>
+      <bit-panel title:from="'File an Issue'">
+        <p>File an Issue</p>
+      </bit-panel>
+    </bit-tabs>
   </div>
 {{/if}}

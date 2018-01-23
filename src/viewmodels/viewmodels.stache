@@ -1,0 +1,20 @@
+<a href="javascript://" on:click="selectComponent()" class="select-component">&#8598;</a>
+
+{{#if highlightedComponent}}
+  <{{highlightedComponentTagName}}>
+{{/if}}
+
+{{#if selectedComponent}}
+  <{{selectedComponentTagName}}>
+
+  <form class="vm-editor">
+    {{#each(selectedComponentViewModel, keyName=key)}}
+      <label>
+        {{keyName}}
+        <input type="text"
+          value:from="../selectedComponentViewModel[keyName]"
+					on:input="scope.root.updateKeyValue(scope.event, keyName, scope.element.value)">
+      </label>
+    {{/each}}
+  </form>
+{{/if}}

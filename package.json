@@ -1,11 +1,11 @@
 {
-  "name": "can-devtools-poc",
+  "name": "can-coach",
   "version": "0.0.0",
   "description": "Proof-of-concept for in-browser devtools for CanJS",
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": "git://github.com/phillipskevin/can-devtools-poc.git"
+    "url": "git://github.com/phillipskevin/can-coach.git"
   },
   "author": {
     "name": "Kevin Phillips",
@@ -43,6 +43,7 @@
     "can-queues": "^0.4.0",
     "can-stache": "^4.0.0-pre.48",
     "can-stache-bindings": "^4.0.0-pre.31",
+    "can-symbol": "^1.0.0-pre.4",
     "can-view-model": "^4.0.0-pre.6",
     "steal-less": "^1.2.0",
     "steal-stache": "^4.0.0-pre.2"

@@ -1,10 +1,5 @@
 import stache from "can-stache";
-import "./src/can-devtools/can-devtools";
+import "./src/can-coach/can-coach";
 
-const view = stache(`
-    <can-devtools />
-`);
-
-document.body.appendChild(
-    view({})
-);
+const el = document.createElement("can-coach");
+document.body.appendChild(el);

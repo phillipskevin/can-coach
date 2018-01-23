@@ -1,0 +1,26 @@
+<can-import from="bit-tabs/unstyled" />
+
+{{#if minimized}}
+	<a href="javascript://" on:click="toggle()" class="open-button">&#x1F96B;</a>
+	{{else}}
+	<div class="devtools-container">
+		<a href="javascript://" on:click="toggle()" class="close-button">X</a>
+		<a href="javascript://" on:click="fileAnIssue()" class="file-an-issue-button">&#x1F41E</a>
+
+		<bit-tabs>
+			<bit-panel title:from="'ViewModels'">
+				<can-dynamic-import from="can-coach/src/viewmodels/viewmodels">
+					{{#if(isResolved)}}
+					<can-coach-viewmodels />
+					{{/if}}
+				</can-dynamic-import>
+			</bit-panel>
+			<bit-panel title:from="'Bindings'">
+				<p>Bindings</p>
+			</bit-panel>
+			<bit-panel title:from="'Queues'">
+				<p>Queues</p>
+			</bit-panel>
+		</bit-tabs>
+	</div>
+{{/if}}

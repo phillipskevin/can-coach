@@ -3,37 +3,46 @@ import DefineMap from "can-define/map/map";
 import stache from "can-stache";
 
 const VM = DefineMap.extend({
-  first: { type: "string", value: "Kevin" },
+	first: { type: "string", default: "Kevin" },
 
-  last: { type: "string", value: "Phillips" },
+	last: { type: "string", default: "Phillips" },
 
-  get fullName() {
-    return `${this.first} ${this.last}`;
-  }
+	get fullName() {
+		return `${this.first} ${this.last}`;
+	}
 });
 
 Component.extend({
-  tag: "name-y",
+	tag: "my-input-el",
 
-  ViewModel: VM,
+	ViewModel: {
+		label: "string",
+		inputVal: "string"
+	},
 
-  view: stache(`
-    <label>
-      First:
-      <input value:from="first" on:input:value:to="first" />
-    </label>
+	view: `
+		<label>
+			{{label}}:
+			<input value:from="inputVal" on:input:value:to="inputVal" />
+		</label>
+	`
+});
 
-    <label>
-      Last:
-      <input value:from="last" on:input:value:to="last" />
-    </label>
+Component.extend({
+	tag: "name-y",
 
-    <h2>
-      {{fullName}}
-    </h2>
-  `)
+	ViewModel: VM,
+
+	view: stache(`
+		<my-input-el inputVal:bind="first" label:from="'First'" />
+		<my-input-el inputVal:bind="last" label:from="'Last'" />
+
+		<h2>
+		{{fullName}}
+		</h2>
+	`)
 });
 
 document.body.appendChild(
-    stache("<name-y />")()
-);
+		stache("<name-y />")()
+		);

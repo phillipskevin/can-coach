@@ -1,5 +1,6 @@
 import Component from "can-component";
 import canSymbol from "can-symbol";
+import "./select-component.less";
 
 const viewModelSymbol = canSymbol.for("can.viewModel");
 
@@ -8,7 +9,6 @@ Component.extend({
 
 	view: `
 		<a href="javascript://"
-			class="select-component"
 			on:click="selectComponent()"
 		>&#8598;</a>
 

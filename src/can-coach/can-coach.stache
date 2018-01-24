@@ -16,7 +16,11 @@
 				</can-dynamic-import>
 			</bit-panel>
 			<bit-panel title:from="'Bindings'">
-				<p>Bindings</p>
+				<can-dynamic-import from="can-coach/src/bindings/bindings">
+					{{#if(isResolved)}}
+					<can-coach-bindings />
+					{{/if}}
+				</can-dynamic-import>
 			</bit-panel>
 			<bit-panel title:from="'Queues'">
 				<p>Queues</p>

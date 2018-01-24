@@ -3,9 +3,11 @@ import DefineMap from "can-define/map/map";
 import stache from "can-stache";
 
 const VM = DefineMap.extend({
-	first: { type: "string", default: "Kevin" },
+	first: { type: "string", default: "Connor" },
 
 	last: { type: "string", default: "Phillips" },
+
+	isOld: { type: "boolean", default: false },
 
 	get fullName() {
 		return `${this.first} ${this.last}`;
@@ -38,7 +40,7 @@ Component.extend({
 		<my-input-el inputVal:bind="last" label:from="'Last'" />
 
 		<h2>
-		{{fullName}}
+		{{fullName}} {{#if isOld}}is old{{else}}is young{{/if}}
 		</h2>
 	`)
 });

@@ -1,19 +1,23 @@
-<a href="javascript://" on:click="selectComponent()" class="select-component">&#8598;</a>
+<can-import from="~/src/select-component/select-component" />
 
-{{#if highlightedComponent}}
-  <{{highlightedComponentTagName}}>
-{{/if}}
+<select-component selectedComponent:to="selectedComponent" />
 
 {{#if selectedComponent}}
   <{{selectedComponentTagName}}>
 
-  <form class="vm-editor">
-    {{#each(selectedComponentViewModel, keyName=key)}}
+  <form>
+    {{#each(selectedComponentViewModel, key=key)}}
       <label>
-        {{keyName}}
-        <input type="text"
-          value:from="../selectedComponentViewModel[keyName]"
-					on:input="scope.root.updateKeyValue(scope.event, keyName, scope.element.value)">
+        {{key}}
+				<input
+					{{#if(scope.root.isBoolean(scope.root.selectedComponentViewModel[key]))}}
+						type="checkbox"
+						checked:bind="scope.root.selectedComponentViewModel[key]"
+					{{else}}
+						type="text"
+						value:bind="scope.root.selectedComponentViewModel[key]"
+					{{/if}}
+				>
       </label>
     {{/each}}
   </form>

@@ -2,6 +2,9 @@ import Component from "can-component";
 import DefineMap from "can-define/map/map";
 import stache from "can-stache";
 
+import queues from "can-queues";
+window.queues = queues;
+
 Component.extend({
 	tag: "my-input-el",
 
@@ -22,6 +25,9 @@ Component.extend({
 	tag: "name-y",
 
 	ViewModel: {
+		init() {
+			window.vm = this;
+		},
 		first: { type: "string", default: "Connor" },
 
 		last: { type: "string", default: "Phillips" },
